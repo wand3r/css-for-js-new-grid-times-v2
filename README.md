@@ -48,11 +48,18 @@ The main story grid holds the big featured story, the secondary stories, and the
 
 The data for the stories is held in a JS file, `src/data.js`. In a real app, this would be read from a database.
 
+## Getting started
+
+As usual, we run a development server with the following pair of commands:
+
+```bash
+$ npm install
+$ npm run dev
+```
+
 ## Troubleshooting
 
 If you run into problems running a local development server, check out our [Troubleshooting Guide](https://courses.joshwcomeau.com/troubleshooting) on the course platform.
-
-This guide addresses the common `Digital Envelope Routine` error you may have seen.
 
 ---
 
