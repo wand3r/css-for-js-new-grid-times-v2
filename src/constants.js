@@ -1,30 +1,42 @@
 export const COLORS = {
-  white: '0deg 0% 100%',
+  white: 'hsl(0deg 0% 100%)',
+  offblack: 'hsl(24deg 5% 6%)',
   gray: {
-    100: '185deg 5% 95%',
-    300: '190deg 5% 80%',
-    500: '196deg 4% 60%',
-    700: '220deg 5% 40%',
-    900: '220deg 3% 20%',
+    100: 'hsl(40deg 12% 95%)',
+    300: 'hsl(35deg 8% 80%)',
+    500: 'hsl(30deg 4% 60%)',
+    700: 'hsl(28deg 5% 40%)',
+    900: 'hsl(24deg 6% 16%)',
   },
-  primary: '340deg 65% 47%',
-  secondary: '240deg 60% 63%',
+  primary: 'hsl(224deg 30% 40%)',
+  secondary: 'hsl(180deg 34% 37%)',
+  urgent: 'hsl(0deg 55% 54%)',
 };
 
 export const WEIGHTS = {
-  normal: 500,
-  medium: 600,
-  bold: 800,
+  normal: 400,
+  medium: 550,
+  bold: 700,
 };
 
 export const BREAKPOINTS = {
-  phone: 600,
-  tablet: 950,
-  laptop: 1300,
+  tabletMin: 550,
+  laptopMin: 1100,
+  desktopMin: 1500,
 };
 
 export const QUERIES = {
-  phoneAndSmaller: `(max-width: ${BREAKPOINTS.phone / 16}rem)`,
-  tabletAndSmaller: `(max-width: ${BREAKPOINTS.tablet / 16}rem)`,
-  laptopAndSmaller: `(max-width: ${BREAKPOINTS.laptop / 16}rem)`,
+  tabletAndUp: `(min-width: ${BREAKPOINTS.tabletMin / 16}rem)`,
+  laptopAndUp: `(min-width: ${BREAKPOINTS.laptopMin / 16}rem)`,
+  desktopAndUp: `(min-width: ${BREAKPOINTS.desktopMin / 16}rem)`,
+  tabletOnly: `
+    (min-width: ${BREAKPOINTS.tabletMin / 16}rem) and
+    (max-width: ${(BREAKPOINTS.laptopMin - 1) / 16}rem)`,
+};
+
+export const FAMILIES = {
+  serif: '"Crimson Pro", Georgia, serif',
+  sansSerif:
+    '"Helvetica Neue", Helvetica, "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", sans-serif',
+  logo: 'Chomsky',
 };
