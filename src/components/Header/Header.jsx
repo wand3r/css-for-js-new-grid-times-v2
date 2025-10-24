@@ -38,12 +38,10 @@ const Header = () => {
           </button>
         </LaptopActionGroup>
         <Logo />
-        <LaptopActionGroup>
-          <div>
-            <Button>Subscribe</Button>
-            <SubscriberLink href="#">Already a subscriber?</SubscriberLink>
-          </div>
-        </LaptopActionGroup>
+        <SubscribeActionGroup>
+          <Button>Subscribe</Button>
+          <SubscriberLink href="#">Already a subscriber?</SubscriberLink>
+        </SubscribeActionGroup>
       </MainHeader>
     </header>
   );
@@ -85,25 +83,45 @@ const LaptopActionGroup = styled(ActionGroup)`
   }
 `;
 
+const SubscribeActionGroup = styled.div`
+  display: none;
+
+  @media ${QUERIES.laptopAndUp} {
+    position: relative;
+    display: revert;
+  }
+`;
+
 const SubscriberLink = styled.a`
-  display: block;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  margin-top: 8px;
   font-family: var(--font-family-serif);
   font-style: italic;
   font-size: ${14 / 16}rem;
   text-align: center;
   text-decoration: underline;
-  margin-top: 8px;
 `;
 
 const MainHeader = styled(MaxWidthWrapper)`
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
   margin-top: 32px;
   margin-bottom: 48px;
 
+  @media ${QUERIES.tabletAndUp} {
+    margin-top: 48px;
+    margin-bottom: 72px;
+  }
+
   @media ${QUERIES.laptopAndUp} {
-    justify-content: space-between;
+    margin-top: 16px;
+    margin-bottom: 72px;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    & > :nth-child(3) {
+      justify-self: end;
+    }
   }
 `;
 
