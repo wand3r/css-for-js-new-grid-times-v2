@@ -59,10 +59,11 @@ const Separator = styled.div`
 const Wrapper = styled.div`
   display: grid;
   gap: 48px;
+  grid-template-columns: minmax(0, 1fr);
 
   @media ${QUERIES.laptopAndUp} {
     gap: 16px;
-    grid-template-columns: 1fr auto 1fr;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
   }
 `;
 
@@ -76,7 +77,6 @@ const MarketCards = styled.div`
 
 const SportsSection = styled.section`
   width: 100%;
-  overflow: hidden;
 `;
 
 const SportsStories = styled.div`
@@ -86,7 +86,6 @@ const SportsStories = styled.div`
 
   @media ${QUERIES.tabletAndUp} {
     display: flex;
-    width: 100%;
     overflow-x: auto;
 
     > * {
