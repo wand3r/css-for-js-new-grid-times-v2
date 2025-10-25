@@ -1,6 +1,6 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 
-import { COLORS, WEIGHTS, FAMILIES } from '../../constants';
+import { COLORS, WEIGHTS, FAMILIES } from "../../constants";
 
 const GlobalStyles = createGlobalStyle`
 /* http://meyerweb.com/eric/tools/css/reset/
@@ -123,6 +123,13 @@ button {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+.multi-line-truncate {
+	display: -webkit-box;
+	-webkit-line-clamp: var(--lines);
+	-webkit-box-orient: vertical;
+	overflow: hidden;
 }
 `;
 

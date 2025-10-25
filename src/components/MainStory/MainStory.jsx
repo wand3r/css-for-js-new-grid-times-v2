@@ -1,21 +1,15 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
+import { QUERIES } from "../../constants";
 
-const MainStory = ({
-  id,
-  title,
-  image,
-  location,
-  abstract,
-  ...delegated
-}) => {
+const MainStory = ({ id, title, image, location, abstract, ...delegated }) => {
   return (
     <Wrapper {...delegated}>
       <a href={`/story/${id}`}>
         <Image alt={image.alt} src={image.src} />
         <Heading>{title}</Heading>
       </a>
-      <Abstract>
+      <Abstract className="multi-line-truncate">
         <Location>{location}</Location> — {abstract}
       </Abstract>
       <ReadMore href="/story">Continue Reading…</ReadMore>
@@ -44,6 +38,11 @@ const Abstract = styled.p`
   font-size: 1rem;
   margin-bottom: 1em;
   white-space: pre-wrap;
+  --lines: 8;
+
+  @media ${QUERIES.tabletOnly} {
+    --lines: 16;
+  }
 `;
 
 const Location = styled.span`
