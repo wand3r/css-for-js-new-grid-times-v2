@@ -57,7 +57,7 @@ const Wrapper = styled.div`
 
   @media ${QUERIES.tabletAndUp} {
     grid-template-columns: 2fr 1fr;
-    gap: revert;
+    gap: 48px 0;
     grid-template-areas:
       "main-story secondary-stories"
       "advertisement advertisement"
@@ -67,6 +67,7 @@ const Wrapper = styled.div`
   @media ${QUERIES.laptopAndUp} {
     grid-template-columns: 4fr 3fr 2fr;
     grid-template-rows: auto auto;
+    gap: 0;
     grid-template-areas:
       "main-story secondary-stories opinion-stories"
       "main-story advertisement advertisement";
@@ -115,8 +116,11 @@ const ListSeparatorItem = styled.div`
 
 const OpinionListItem = styled(ListSeparatorItem)`
   @media ${QUERIES.tabletOnly} {
+    flex: 1;
     &:not(:last-of-type) {
-      all: revert;
+      border-bottom: revert;
+      margin-bottom: revert;
+      padding-bottom: revert;
     }
   }
 `;
@@ -128,12 +132,7 @@ const OpinionSection = styled.section`
 const AdvertisementSection = styled.section`
   grid-area: advertisement;
 
-  @media ${QUERIES.tabletAndUp} {
-    margin-block: 48px;
-  }
-
   @media ${QUERIES.laptopAndUp} {
-    margin-block: revert;
     margin-top: 16px;
     padding-top: 16px;
     border-top: 1px solid var(--color-gray-300);
